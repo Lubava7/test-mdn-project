@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2RPS2</title>
+</head>
+<body>
+    <style>
+        header{
+            text-align: center;
+            color: black;
+            font-family: sans-serif;
+            font-size: 40px;
+            margin-top: 5%;
+
+        }
+        .span_score{
+            font-size: 25px;
+            text-align: center;
+            border: 2px solid black;
+            
+            
+        }
+        div{
+            text-align: center;
+            font-size: 25px;
+            margin-top: 7%;
+            
+        }
+        *{
+            background-color: black;
+            color: white;
+        }
+        button{
+            font-size: 25px;
+
+        }
+    </style>
+    <header>
+        <p>Rock , Papper , Scissors Game</p>
+    </header>
+    
+        <div class="span_score">
+            <span class="user_score">0</span>:<span class="comp_score">0</span>
+        </div>
+        <div>
+            Do you choose Rock , Papper or Scissors ?
+        </div>
+        <div>
+            <img id="choices" class="r" src="rock.png" alt="rock">
+            <img id="choices"  class="p" src="pappermychoice.png" alt="papper">
+            <img id="choices"  class="s" src="scissors.png" alt="scissors">
+        </div>
+        <div class="result-all">
+          <div class="choice"></div>
+        	<div class="result"></div>
+        </div>
+
+        <script>
+          
+          
+          	let isGameOver = false;
+          
+            const rock = document.querySelector('.r')
+            const papper = document.querySelector('.p')
+            const scissors = document.querySelector('.s')
+            const result_div = document.querySelector('.result')
+            const user_score = document.querySelector('.user_score')
+            const comp_score = document.querySelector('.comp_score')
+            const choice = document.querySelector('.choice')
+      			
+            const MAX_SCORE = 3;
+       
+            const AVALIABLE_CHOICES = ['rock', 'paper', 'scissors']
+						
+            let userScore = 0 
+            let compScore = 0
+            
+            function getComputerChoice(){
+            	              
+              const randomAvaliableNumber = Math.floor(Math.random() * available_choices.length)
+  
+              const computerChoice = available_choices[randomAvaliableNumber]
+              
+              return computerChoice
+            
+            }
+          
+  					function game(playerChoice){
+       		
+              let isPlayerWin = false; 
+           	
+             	let computerChoice = getComputerChoice();
+              
+							if(playerChoice === 'rock' && computerChoice === 'scissors'){
+              	isPlayerWin = true;
+              }
+              if(playerChoice == 'paper' && computerChoice == 'rock'){
+                isPlayerWin = true;
+             }
+              if(playerChoice == 'scissors' && computerChoice == 'paper'){
+             		isPlayerWin = true;   
+             }
+             	
+							choice.innerText = 'Player choice: ' + playerChoice + '. 		Computer choice: ' + computerChoice;
+             
+              if(isPlayerWin){ 
+                 userScore = userScore + 1
+              	 result_div.innerText = 'u win'
+              }else {
+                if(playerChoice === computerChoice){
+          				result_div.innerText = 'draw'
+                }else {
+                  compScore = compScore + 1
+             			result_div.innerText = 'u lose'
+                }
+              }
+              
+              if(compScore === MAX_SCORE || userScore === MAX_SCORE){
+        				isGameOver = true       
+              } 
+              user_score.innerText = userScore;
+              comp_score.innerText = compScore;
+              
+             // renderToDOM(isPlayerWin, userScore, compScore) Сюда можно вынести логику для ДОМА
+            }
+              
+        
+            function main(){
+                rock.addEventListener('click', function(){
+                    	if(isGameOver){ 
+                       alert('SORRY, GAME OVER :(')
+                      }else{
+                       game('rock')
+                      }
+                   
+                })
+                
+                papper.addEventListener('click', function(){
+                         
+                 			if(isGameOver){
+                       alert('SORRY, GAME OVER :(')
+                      }else{
+                       game('paper')
+                      }
+                  
+                })
+                
+                scissors.addEventListener('click', function(){
+                  
+                      if(isGameOver){
+                       alert('SORRY, GAME OVER :(')
+                      }else{
+                       game('scissors')
+                      }
+                    
+                })    
+        		}
+          
+        	
+          main()
+          // При нажатии на иконку происходит логика игры и выводится результат 
+        </script>
+    
+</body>
+</html>

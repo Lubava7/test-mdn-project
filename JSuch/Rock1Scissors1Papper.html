@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock,Papper,Scissors</title>
+</head>
+<body>
+    <style>
+        .all{
+            /* background-image:url(img_main.png); */
+        }
+        div{
+           text-align: center;
+           padding-top: 5%;
+           margin: 0px;
+           font-family: Asap, sans-serif ;
+           color: black;
+
+        }
+        header{
+            padding: 0px;
+            margin: 0px;
+            font-family: Asap, sans-serif ;
+            text-align: center;
+            color: black;
+            border-color: black;
+        }
+        
+        main{
+           padding-left: 5%;
+           padding-right: 15%;
+           margin-top: 5%;
+           background-color: black;
+
+        }
+        .span_score{
+            border:1px solid black;
+        }
+    </style>
+    <header>
+    <div>
+        <p>Rock , Papper , Scissors Game</p>
+    </div>
+</header>
+
+<!-- далее 
+rps - rock papper scissors
+res -result
+rsp -rock scissors papper -->
+<div class="all">
+    <span class="span_score">
+    <span class="user_score">0</span>:<span class="comp_score">0</span>
+    </span>
+    <div>
+        <label>Do you choose Rock,Papper or Scissors?</label> 
+     </div>
+    
+     <main>
+        <img class="rock" onclick="rock_img()" src="rock.png" alt="rock">
+        <img class="papper" onclick="papper_img()" src="pappermychoice.png" alt="papper">
+        <img class="scissors" onclick="scissors_img()" src="scissors.png" alt="scissors">
+    </main>
+    <div class="user-choice"></div>
+     <!-- <div>
+         <input type="text" class='rpsField' style="text-transform: lowercase;"/>
+     </div> -->
+     <div>
+        <button onclick='res()'>Choice</button>
+        <div class='result'></div>
+        </div>
+</div>
+
+    
+    <script>
+        
+
+        function compPlay(){
+            let all = ['rock','scissors','papper'];
+            let out = all[Math.floor(Math.random()*all.length)];
+            return out;
+            // return outcomeAll;
+           
+        }
+        function res(){
+            let result;
+            let resultDiv = document.querySelector('.result')
+            result = compPlay();
+            resultDiv.innerHTML = result;
+            
+            
+        }
+        function rock_img(){
+            let rock_res ;
+            let rock_res_div = document.querySelector('.user-choice')
+            rock_res = 'rock'
+            rock_res_div.innerHTML= rock_res;
+        }
+        function papper_img(){
+            let papper_res ;
+            let papper_res_div = document.querySelector('.user-choice')
+            papper_res = 'papper'
+            papper_res_div.innerHTML= papper_res;
+        }
+        function scissors_img(){
+            let scissors_res ;
+            let scissors_res_div = document.querySelector('.user-choice')
+            scissors_res = 'scissors'
+            scissors_res_div.innerHTML= scissors_res;
+        }
+    
+       
+
+    </script>
+</body>
+</html>

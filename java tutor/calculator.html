@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculatorCSS.css" />
+  </head>
+  <body>
+    <script>
+      let op = "*";
+      function multi() {
+        let result;
+        let resultDiv = document.querySelector(".result");
+        let bid = Number(document.querySelector(".bid").value);
+        let hours = Number(document.querySelector(".hours").value);
+        let shifts = Number(document.querySelector(".shifts").value);
+
+        result = bid * hours * shifts;
+
+        resultDiv.innerHTML = result;
+        console.log(result, resultDiv, bid, hours, shifts);
+      }
+    </script>
+    <style>
+      * {
+        font-size: 30px;
+      }
+      .formForAll {
+        margin: 20%;
+      }
+      div {
+        margin: 10%;
+        border-radius: 10%;
+        height: 25%;
+        width: 60%;
+      }
+      .outcomess {
+        padding-left: 8%;
+      }
+      input {
+        border-radius: 10%;
+      }
+      body {
+        background: rgb(25, 43, 25)
+          url(https://img.freepik.com/free-vector/math-science-vector-seamless-pattern-with-handwritten-formulas-on-a-green-chalkboard-for-the-background_101002-142.jpg?size=626&ext=jpg);
+        color: ivory;
+      }
+      button {
+        background-color: #2e8b57;
+        color: white;
+      }
+    </style>
+    <div class="formForAll">
+      <div>
+        <div>
+          <label>Write the your rate per hour:</label>
+        </div>
+        <div>
+          <input class="bid" />
+        </div>
+      </div>
+      <div>
+        <div>
+          <label>Write the number of hours per shift:</label>
+        </div>
+        <div>
+          <input class="hours" />
+        </div>
+      </div>
+      <div>
+        <div>
+          <label>Write the number of shifts:</label>
+        </div>
+        <div>
+          <input class="shifts" />
+        </div>
+      </div>
+      <div class="outcomess">
+        <button onclick="multi()">multiplicate</button>
+        <div class="result"></div>
+      </div>
+    </div>
+
+    <!-- <style>
+        button{
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+   <script>
+       function bitch(){
+           let num = document.querySelector('.butt')
+           let fields = document.querySelector('.field')
+           let output = num.value
+           fields.value = output
+
+           console.log(num)
+
+       }
+   </script>
+   <div>
+    <textarea class='field'></textarea>
+   </div>
+   <div>
+       <button class="butt"  onclick="bitch()" value="1">1</button>
+       <button class="butt"  onclick="bitch()" value="2">2</button>
+       <button class="butt"  onclick="bitch()" value="3">3</button>
+       <button class="butt"  onclick="bitch()" value="4">4</button>
+       <button class="butt"  onclick="bitch()" value="5">5</button>
+       <button class="butt"  onclick="bitch()" value="6">6</button>
+       <button class="butt"  onclick="bitch()" value="7">7</button>
+       <button class="butt"  onclick="bitch()" value="8">8</button>
+       <button class="butt"  onclick="bitch()" value="9">9</button>
+       <button class="butt"  onclick="bitch()" value="-">-</button>
+       <button class="butt"  onclick="bitch()" value="0">0</button>
+       <button class="butt"  onclick="bitch()" value="+">+</button>
+       <button class="butt"  onclick="bitch()" value=":">:</button>
+       <button class="butt"  onclick="bitch()" value="*">*</button>
+   </div> -->
+    <!-- <script>
+        let bid = prompt("Write the your rate per hour:")
+        alert(bid)
+        let hourz = prompt("Number of hours per shift:")
+        alert(hourz)
+        let dayz = prompt("Write the number of shifts:")
+        alert(dayz)
+        let salary = prompt("Are you ready to know the outcome?")
+        alert(salary)
+        let answer = "yes"
+
+        while(answer == "yes"){
+        answer = prompt("But why?Can i ask you again?")
+        if(salary == "yes"){
+        alert(bid*hourz*dayz)
+        }else if(salary == "no"){
+        
+        }
+
+    }
+    </script> -->
+
+    <!-- <script>
+       function bitch(){
+            let firstcont = document.querySelector('.cont1')
+            let secondcont = document.querySelector('.cont2')
+            let content = firstcont.innerHTML.trim()
+
+            secondcont.innerHTML = content
+
+            console.log('content',content)
+        }
+    </script>
+    
+    <div class = 'cont1'>
+        Write the your rate per hour:
+    </div>
+    <div class = 'cont2'></div>
+    <input type="text"/>
+    <button id = 'cont0' onclick = 'bitch()'>ContButt</button> -->
+  </body>
+</html>

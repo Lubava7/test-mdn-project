@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RabotaJS</title>
+  </head>
+  <body>
+    <div>
+      <p>Turn off the light!</p>
+      <button>i</button>
+    </div>
+
+    <script>
+      let btn = document.querySelector("button");
+      let txt = document.querySelector("p");
+      let dvi = document.querySelector("div");
+
+      btn.addEventListener("click", updateBtn);
+
+      function updateBtn() {
+        if (btn.textContent === ".") {
+          btn.textContent = ",";
+          txt.textContent = "Oh Sh*t!Turn on the light!";
+          txt.style.color = "white";
+          dvi.style.backgroundColor = "black";
+          btn.style.backgroundImage =
+            "URL('1_52550508c39a552550508c3a09--333.jpg')";
+        } else {
+          btn.textContent = ".";
+          txt.textContent = "Turn off the light!";
+          txt.style.color = "black";
+          dvi.style.backgroundColor = "white";
+          btn.style.backgroundImage = "URL('1_52550508c39a552550508c3a09.jpg')";
+        }
+      }
+    </script>
+    <style>
+      button {
+        background-image: url("1_52550508c39a552550508c3a09.jpg");
+        height: 430px;
+        width: 315px;
+        border: black;
+        margin-left: 40%;
+        margin-top: 5%;
+      }
+      p {
+        text-align: center;
+        padding-top: 5%;
+        font-size: 160px;
+      }
+      div {
+        border: 1px solid transparent;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </body>
+</html>

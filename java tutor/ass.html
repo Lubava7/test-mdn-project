@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // let hello = prompt("How r u?");
+
+        // if (hello == 'good'){
+        //     alert("Okey");
+        
+        // }else if(hello == "bad"){
+        //     alert("okey,bye")
+
+        // } else{
+        //     alert("...")
+        // }
+
+        let runApp = "yes"; 
+
+        while(runApp == "yes"){
+            let number = +prompt("write the first number:");
+
+            let number2 = +prompt("Write the second number:")
+
+            let action = prompt("What do u want to do:") 
+
+            while(action !== '+' && action !== "-"){
+                alert("WRONG ACTION!")
+                action = prompt("okay i ask u again")
+            }
+
+            if(action == "+"){
+                alert(number + number2)
+            }else if(action == "-"){
+                alert(number - number2)
+            }
+            runApp = prompt("do you want to continue?") 
+        }
+        
+        alert("Thank you for using my calculator")
+
+            
+
+        </script>
+</body>
+</html>

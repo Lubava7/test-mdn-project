@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Change color</button>
+    <script>
+      const btn = document.querySelector("button");
+
+      function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+      }
+
+      btn.onmouseover = function () {
+        const rndCol =
+          "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+        document.body.style.backgroundColor = rndCol;
+      };
+    </script>
+  </body>
+</html>
+
+<!-- btn.onfocus и btn.onblur — Цвет изменится, когда кнопка будет сфокусирована или не сфокусирована 
+(попробуйте нажать Tab, чтобы выбрать кнопку или убрать выбор). 
+Эти свойства часто применяются для отображения информации о том, как заполнить поля формы, когда они сфокусированы,
+ или отобразить сообщение об ошибке, если поле формы было заполнено с неправильным значением.
+
+btn.ondblclick — Цвет будет изменяться только при двойном щелчке.
+
+window.onkeypress, window.onkeydown, window.onkeyup — Цвет будет меняться при нажатии клавиши на клавиатуре, 
+причём keypress ссылается на обычное нажатие (нажатие кнопки и последующее её отпускание как одно целое),
+ a keydown и keyup разделяют действия на нажатие клавиши и отпускание, и ссылаются на них соответственно.
+  Обратите внимание, что это не работает, если вы попытаетесь зарегистрировать этот обработчик событий на самой кнопке 
+  - его нужно зарегистрировать на объекте window, который представляет все окно браузера.
+
+  btn.onmouseover и btn.onmouseout — Цвет будет меняться при наведении указателя мыши на кнопку или когда указатель будет отводиться от кнопки соответственно. -->
+
+<!-- ВАРИАНТЫ НАПИСАНИЯ КОДА: 
+
+buttons.forEach(function(button) { 
+  button.onclick = bgChange; 
+}); 
+ДЛЯ ПЕРЕБОРА ВСЕХ ЭЛЕМЕНТОВ , ЧТОБЫ НЕ ДЕЛАТЬ ЦИКЛ ФОР 
+
+
+var btn =
+document.querySelector('button');
+ function bgChange() { 
+   var rndCol = 'rgb(' +random(255) + ',' + random(255) + ',' + random(255) + ')';
+document.body.style.backgroundColor = rndCol; 
+} 
+btn.addEventListener('click',bgChange); -->
+
+<!-- btn.addEventListener('click', function() {
+  var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+}); -->
+<!-- ЧТОБЫ ЗАПИСАТЬ ДВА СОБЫТИЯ НА ОДИН ЭЛЕМЕНТ:
+myElement.addEventListener('click', functionA);
+myElement.addEventListener('click', functionB); -->

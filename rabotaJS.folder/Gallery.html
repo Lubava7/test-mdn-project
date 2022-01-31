@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+  </head>
+  <body>
+    <style>
+      .full-img {
+        position: absolute;
+      }
+      .thumb-bar {
+        width: 20%;
+        align-items: flex-start;
+      }
+    </style>
+    <h1>Пример фотогалереи</h1>
+
+    <div class="full-img">
+      <img class="displayed-img" src="images/pic1.jpg" />
+      <div class="overlay"></div>
+      <button class="dark">Темнее</button>
+    </div>
+
+    <div class="thumb-bar"></div>
+    <script src="main.js/script.js"></script>
+
+    <!-- <script>
+      var displayedImage = document.querySelector(".displayed-img");
+      var thumbBar = document.querySelector(".thumb-bar");
+
+      btn = document.querySelector("button");
+      var overlay = document.querySelector(".overlay");
+
+      /* Looping through images */
+
+      let a = [
+        "images/pic1.jpg",
+        "images/pic2.jpg",
+        "images/pic3.jpg",
+        "images/pic4.jpg",
+        "images/pic5.jpg",
+      ];
+
+      for (let i = 0; i < a.length; i++) {
+        console.log(i);
+        var newImage = document.createElement("img");
+        newImage.setAttribute("src", "images/" + a[i] + ".jpg");
+        thumbBar.appendChild(newImage);
+        newImage.onclick = function () {};
+      }
+
+      /* Wiring up the Darken/Lighten button */
+    </script> -->
+  </body>
+</html>
